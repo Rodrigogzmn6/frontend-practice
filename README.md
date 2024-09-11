@@ -10,8 +10,6 @@ Projects to practice **Frontend** skills using real examples.
 
 ## ⌨️ React projects
 
-<!--
-| Number | Project | Live Web | Código | Preview |
-| - | - | - | - | - |
-| `01`   | Ableton - About page | [Visit](https://ableton.com/en/about/) | [See](projects/ableton) | [Visitar](web.com) |
--->
+| Number | Project              | Live Web                               | Código                  | Preview     |
+| ------ | -------------------- | -------------------------------------- | ----------------------- | ----------- |
+| `01`   | Ableton - About page | [Visit](https://ableton.com/en/about/) | [See](projects/ableton) | [Visitar]() |
