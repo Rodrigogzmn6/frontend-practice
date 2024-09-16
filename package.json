@@ -8,6 +8,7 @@
   "description": "<div align=\"center\">",
   "main": "index.js",
   "scripts": {
+    "dev_ableton": "npm run dev --workspace=projects/ableton",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
