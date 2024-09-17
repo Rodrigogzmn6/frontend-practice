@@ -1,47 +1,39 @@
 'use client'
+import Link from 'next/link'
 import { useState } from 'react'
-import { LeadingHeader } from './LeadingHeader'
+import '../globals.css'
+import { Logo } from './Icons'
 import { PrimaryHeader } from './PrimaryHeader'
 import { SecondaryHeader } from './SecondaryHeader'
-
+import { ShowMenuButton } from './ShowMenuButton'
 export const Header = () => {
   const [visibleMenu, setVisibleMenu] = useState(false)
-  const [visibleSecondaryMenu, setVisibleSecondaryMenu] = useState(false)
 
-  const handleMenuClick = () => {
+  const handleShowMenuClick = () => {
     setVisibleMenu(!visibleMenu)
-  }
-
-  const handleMoreClick = () => {
-    setVisibleSecondaryMenu(!visibleSecondaryMenu)
   }
 
   return (
     <header
-      className={`lg:bg-white lg:flex lg:flex-col lg:gap-8 lg:relative lg:text-black
-        ${visibleMenu ? 'bg-blue' : 'border-b-2 closed'}  `}>
+      className={`flex flex-col font-semibold gap-5 p-5 relative text-xl
+    ${visibleMenu ? 'bg-blue text-white' : 'bg-white text-black'}`}>
       <div
-        className={`flex flex-col font-semibold gap-6 items-start relative text-xl px-5 py-5
-          lg:flex-row lg:items-center lg:px-10
-          ${visibleMenu && 'text-white lg:text-black'}`}>
-        <LeadingHeader handleMenu={handleMenuClick} visibleMenu={visibleMenu} />
-        <div
-          className={`dropdown-menu absolute bg-blue flex flex-col gap-5 left-0 px-5 text-white top-full w-full
-          lg:hidden
-          ${visibleMenu ? 'opened' : 'closed'} `}>
-          <PrimaryHeader />
-          <SecondaryHeader visibleMenu={visibleMenu} />
-        </div>
-        <div
-          className='hidden
-          lg:block lg:flex-grow'>
-          <PrimaryHeader
-            handleMoreClick={handleMoreClick}
-            visibleSecondaryMenu={visibleSecondaryMenu}
-          />
-        </div>
+        className={`leading flex gap-5 z-10
+      ${visibleMenu ? 'opened' : ''}`}>
+        <Link href='/' className='self-center'>
+          <Logo />
+        </Link>
+        <ShowMenuButton
+          handleMenu={handleShowMenuClick}
+          visibleMenu={visibleMenu}
+        />
       </div>
-      <SecondaryHeader visibleSecondaryMenu={visibleSecondaryMenu} />
+      <div
+        className={`dropdown-menu absolute bg-blue flex flex-col gap-5 left-0 text-white top-full px-5 w-full
+        ${visibleMenu ? 'opened' : ''}`}>
+        <PrimaryHeader />
+        <SecondaryHeader />
+      </div>
     </header>
   )
 }

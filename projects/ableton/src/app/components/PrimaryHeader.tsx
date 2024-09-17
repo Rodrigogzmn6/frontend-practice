@@ -1,15 +1,6 @@
 import Link from 'next/link'
-import React from 'react'
 
-interface PrimaryHeaderProps {
-  handleMoreClick?: () => void
-  visibleSecondaryMenu?: boolean
-}
-
-export const PrimaryHeader: React.FC<PrimaryHeaderProps> = ({
-  handleMoreClick,
-  visibleSecondaryMenu
-}) => {
+export const PrimaryHeader = () => {
   return (
     <div className='flex flex-col gap-5 lg:flex-row lg:justify-between lg:items-center'>
       <div className='flex flex-col gap-5 lg:flex-row lg:gap-7'>
@@ -20,11 +11,6 @@ export const PrimaryHeader: React.FC<PrimaryHeaderProps> = ({
         <Link href='/'>Shop</Link>
         <Link href='/'>Packs</Link>
         <Link href='/'>Help</Link>
-        <button
-          className='hidden text-orange lg:block'
-          onClick={handleMoreClick}>
-          More {visibleSecondaryMenu === true ? '-' : '+'}
-        </button>
       </div>
       <div className='flex flex-col gap-5 lg:flex-row lg:items-center'>
         <Link href='/' className='lg:text-blue'>

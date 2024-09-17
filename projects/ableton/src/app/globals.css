@@ -10,33 +10,42 @@ body {
   min-height: 100vh;
 }
 
-@keyframes closed {
-  0% {
-    background-color: blue;
-    color: white;
-  }
-
-  99% {
-    background-color: blue;
-    color: white;
-  }
-
-  100% {
-    background-color: white;
-    color: black;
-  }
+.leading {
+  transition: color 0s .3s;
 }
 
-header.closed {
-  animation: closed 0.5s;
+.leading.opened {
+  transition: color 0s;
 }
 
 .dropdown-menu {
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
+  display: none;
+  animation: slideUp 0.3s ease-in-out;
+  transition: display .3s ease-in-out allow-discrete;
 }
 
-.opened {
-  max-height: 1000px;
+.dropdown-menu.opened {
+  animation: slideDown 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
 }

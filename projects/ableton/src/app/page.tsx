@@ -5,10 +5,6 @@ export default function Home() {
       <div className='h-96 w-90 bg-green'></div>
       <div className='h-96 w-90 bg-orange'></div>
       <div className='h-96 w-90 bg-green'></div>
-      <div className='h-96 w-90 bg-orange'></div>
-      <div className='h-96 w-90 bg-green'></div>
-      <div className='h-96 w-90 bg-orange'></div>
-      <div className='h-96 w-90 bg-green'></div>
     </main>
   )
 }

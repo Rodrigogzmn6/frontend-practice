@@ -1,6 +1,6 @@
-import { DownArrow, UpArrow } from './Icons'
+import { DownArrow, MinusIcon, PlusIcon, UpArrow } from './Icons'
 
-export const MenuButton = ({
+export const ShowMenuButton = ({
   handleMenu,
   visibleMenu
 }: {
@@ -14,6 +14,12 @@ export const MenuButton = ({
         className='flex gap-1 items-center lg:hidden'>
         <p>Menu</p>
         {visibleMenu ? <UpArrow /> : <DownArrow />}
+      </button>
+      <button
+        onClick={handleMenu}
+        className='hidden text-orange lg:flex lg:gap-1 lg:items-center'>
+        <p>More</p>
+        {visibleMenu ? <PlusIcon /> : <MinusIcon />}
       </button>
     </div>
   )
