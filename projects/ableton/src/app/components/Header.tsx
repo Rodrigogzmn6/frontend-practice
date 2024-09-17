@@ -4,6 +4,7 @@ import { useState } from 'react'
 import '../globals.css'
 import { Logo } from './Icons'
 import { PrimaryHeader } from './PrimaryHeader'
+import { PrimaryHeaderNavLinks } from './PrimaryHeaderNavLinks'
 import { SecondaryHeader } from './SecondaryHeader'
 import { ShowMenuButton } from './ShowMenuButton'
 export const Header = () => {
@@ -16,23 +17,34 @@ export const Header = () => {
   return (
     <header
       className={`flex flex-col font-semibold gap-5 p-5 relative text-xl
-    ${visibleMenu ? 'bg-blue text-white' : 'bg-white text-black'}`}>
+    ${
+      visibleMenu
+        ? 'bg-blue text-white lg:bg-white lg:text-black'
+        : 'bg-white text-black'
+    }`}>
       <div
         className={`leading flex gap-5 z-10
       ${visibleMenu ? 'opened' : ''}`}>
         <Link href='/' className='self-center'>
           <Logo />
         </Link>
+        <div className='hidden lg:block'>
+          <PrimaryHeaderNavLinks />
+        </div>
         <ShowMenuButton
           handleMenu={handleShowMenuClick}
           visibleMenu={visibleMenu}
         />
       </div>
       <div
-        className={`dropdown-menu absolute bg-blue flex flex-col gap-5 left-0 text-white top-full px-5 w-full
+        className={`dropdown-menu absolute bg-blue flex flex-col gap-5 left-0  text-white top-full px-5 w-full lg:bg-white lg:text-black
         ${visibleMenu ? 'opened' : ''}`}>
-        <PrimaryHeader />
-        <SecondaryHeader />
+        <div className='lg:hidden'>
+          <PrimaryHeader />
+        </div>
+        <div className={`${visibleMenu ? 'block' : 'hidden'}`}>
+          <SecondaryHeader />
+        </div>
       </div>
     </header>
   )

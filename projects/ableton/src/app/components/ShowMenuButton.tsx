@@ -19,7 +19,7 @@ export const ShowMenuButton = ({
         onClick={handleMenu}
         className='hidden text-orange lg:flex lg:gap-1 lg:items-center'>
         <p>More</p>
-        {visibleMenu ? <PlusIcon /> : <MinusIcon />}
+        {visibleMenu ? <MinusIcon /> : <PlusIcon />}
       </button>
     </div>
   )
