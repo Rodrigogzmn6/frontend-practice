@@ -1,4 +1,4 @@
-import { DownArrow, MinusIcon, PlusIcon, UpArrow } from './Icons'
+import { DownArrow, MinusIcon, PlusIcon, UpArrow } from '../Core/Icons'
 
 export const ShowMenuButton = ({
   handleMenu,

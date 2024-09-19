@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import { Header } from './components/Header'
+import { Toaster } from 'sonner'
+import { Footer } from './components/Footer/Footer'
+import { Header } from './components/Header/Header'
 import './globals.css'
 import { ptSans } from './ui/fonts'
 
@@ -17,9 +19,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${ptSans.className} antialiased flex flex-col`}>
+        <Toaster />
         <Header />
         {children}
-        <footer>This is the footer</footer>
+        <Footer />
       </body>
     </html>
   )
