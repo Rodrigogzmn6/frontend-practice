@@ -42,7 +42,7 @@ export const Footer = () => {
 
   return (
     <footer
-      className='border-t-2 flex flex-col gap-8 items-stretch p-14 text-sm
+      className='bg-white border-t-2 flex flex-col gap-8 items-stretch p-14 text-sm text-black
     lg:text-xl'>
       <h2
         className='font-semibold text-4xl
