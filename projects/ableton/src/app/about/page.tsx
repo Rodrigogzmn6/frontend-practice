@@ -50,7 +50,9 @@ export default function About() {
   }
 
   return (
-    <div className='flex flex-col gap-14 items-center text-xl'>
+    <div
+      className='flex flex-col gap-14 items-center text-xl
+    lg:gap-28'>
       <section className='relative w-5/6'>
         <Image
           src={headerImage}
@@ -62,7 +64,7 @@ export default function About() {
           <HeaderTitle />
         </div>
       </section>
-      <section className='w-5/6'>
+      <section className='w-5/6 lg:w-1/2 lg:text-3xl'>
         <h3 className='font-semibold'>
           We make{' '}
           <Link href='/' className='text-blue'>
@@ -110,7 +112,7 @@ export default function About() {
         </div>
       </section>
       <Text text={textOne} />
-      <section className='w-5/6'>
+      <section className='w-5/6 lg:w-1/2'>
         <VideoPlayer url='https://www.youtube.com/watch?v=9SbnhgjeyXA' />
       </section>
       <Text text={textTwo} />
@@ -162,9 +164,17 @@ export default function About() {
         </div>
       </section>
       <Text text={textFive} />
-      <section className='w-5/6'>
-        <Image src={photoEight} height={3781} width={5672} alt='Ableton' />
-        <div className='bg-lightBlue flex flex-col font-semibold gap-4 mb-10 p-14'>
+      <section className='mb-10 w-5/6 lg:grid lg:grid-cols-2 lg:mb-20'>
+        <Image
+          className='h-full object-center object-cover'
+          src={photoEight}
+          height={3781}
+          width={5672}
+          alt='Ableton'
+        />
+        <div
+          className='bg-lightBlue flex flex-col font-semibold gap-4 p-14 lg:mb-0
+        lg:p-28'>
           <p>
             We’re really proud of the work we’ve done so far. But there’s so
             much more to come. If you’d like to be a part of it, please join us.

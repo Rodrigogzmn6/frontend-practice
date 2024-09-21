@@ -7,7 +7,7 @@ interface TextProps {
 }
 export const Text: React.FC<TextProps> = ({ text }) => {
   return (
-    <section className='w-5/6'>
+    <section className='w-5/6 lg:text-3xl lg:w-1/2'>
       <h3 className='font-semibold'>{text.main}</h3>
       <p className='text-lg'>{text.secondary}</p>
       <p>{text.third !== undefined && text.third}</p>
