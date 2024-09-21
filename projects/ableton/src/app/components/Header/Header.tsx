@@ -16,7 +16,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`flex flex-col font-semibold gap-5 p-5 relative text-xl
+      className={`flex flex-col font-semibold gap-5 p-5 relative text-xl z-50
     ${
       visibleMenu
         ? 'bg-blue text-white lg:bg-white lg:text-black'
@@ -37,7 +37,8 @@ export const Header = () => {
         />
       </div>
       <div
-        className={`dropdown-menu absolute bg-blue flex flex-col gap-5 left-0  text-white top-full px-5 w-full lg:bg-white lg:text-black
+        className={`dropdown-menu absolute bg-blue flex flex-col gap-5 left-0  text-white top-full px-5 w-full
+          lg:bg-white lg:static lg:text-black
         ${visibleMenu ? 'opened' : ''}`}>
         <div className='lg:hidden'>
           <PrimaryHeader />
