@@ -8,7 +8,6 @@ export const SignupForm = () => {
 
   const handleFormOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log(email)
     setEmail('')
     toast.success(`Thank you for subscribing: ${email}`)
   }

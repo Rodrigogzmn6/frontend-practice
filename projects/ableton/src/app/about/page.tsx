@@ -13,10 +13,8 @@ import poster from '../../../public/poster.jpg'
 import { RightArrow } from '../components/Core/Icons'
 import { HeaderTitle } from './components/HeaderTitle'
 import { Text } from './components/Text'
-import { VideoPlayer } from './components/VideoPlayer'
 
 export default function About() {
-  console.log(photoEight)
   const textOne = {
     main: 'Making music isn’t easy. It takes time, effort, and learning. But when you’re in the flow, it’s incredibly rewarding.',
     secondary:
@@ -112,9 +110,9 @@ export default function About() {
         </div>
       </section>
       <Text text={textOne} />
-      <section className='w-5/6 lg:w-1/2'>
+      {/* <section className='w-5/6 lg:w-1/2'>
         <VideoPlayer url='https://www.youtube.com/watch?v=9SbnhgjeyXA' />
-      </section>
+      </section> */}
       <Text text={textTwo} />
       <section className='p-14 relative'>
         <div className='gap-y-14 grid grid-cols-2 grid-rows-2 place-items-center w-5/6 mx-auto z-10'>
